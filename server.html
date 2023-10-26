@@ -1,33 +1,29 @@
-<html>
-	<head>
-		<meta charset="UTF-8"/>
-	</head>
-	<body>
-		<div id="content">
-			<script type="module" src="./cod-ser-handler.js"></script>
-			<script type="module" src="./cod-ser.js"></script>
-			<script type="module">
-				let url = "http://localhost:8000/test2.html";
-				let contentElement = document.getElementById("content");
-				let contentText = await (await fetch(url)).text();
-				contentElement.innerHTML = contentText;
+<title>ЦОД ФТШ > 2022-2024</title>
+{body}
+<div id="content">
+	<script type="module" src="https://pths-center.github.io/cod-ser/cod-ser-handler.js"></script>
+	<script type="module" src="https://pths-center.github.io/cod-ser/cod-ser.js"></script>
+	<script type="module">
+		let url = "https://pths-center.github.io/2022-2024/index.html";
+		let contentElement = document.getElementById("content");
+		let contentText = await (await fetch(url)).text();
+		contentElement.innerHTML = contentText;
 
-				let annUrl = "http://localhost:8000/announcements.html";
-				let annSer = document.querySelector("#announcements");
-				annSer.innerHTML = await (await fetch(annUrl)).text();
+		let annUrl = "https://pths-center.github.io/2022-2024/announcements.html";
+		let annSer = document.querySelector("#announcements");
+		annSer.innerHTML = await (await fetch(annUrl)).text();
 
-				let mathUrl = "http://localhost:8000/math.html";
-				let mathSer = document.querySelector("#math > .series");
-				mathSer.innerHTML = await (await fetch(mathUrl)).text();
+		let mathUrl = "https://pths-center.github.io/2022-2024/math.html";
+		let mathSer = document.querySelector("#math > .series");
+		mathSer.innerHTML = await (await fetch(mathUrl)).text();
 
-				let physUrl = "http://localhost:8000/phys.html";
-				let physSer = document.querySelector("#phys > .series");
-				physSer.innerHTML = await (await fetch(physUrl)).text();
+		let physUrl = "https://pths-center.github.io/2022-2024/phys.html";
+		let physSer = document.querySelector("#phys > .series");
+		physSer.innerHTML = await (await fetch(physUrl)).text();
 
-				let progUrl = "http://localhost:8000/prog.html";
-				let progSer = document.querySelector("#prog > .series");
-				progSer.innerHTML = await (await fetch(progUrl)).text();
-			</script>
-		</div>
-	</body>
-</html>
+		let progUrl = "https://pths-center.github.io/2022-2024/prog.html";
+		let progSer = document.querySelector("#prog > .series");
+		progSer.innerHTML = await (await fetch(progUrl)).text();
+	</script>
+</div>
+{/body}
