@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+	</head>
+	<body>
+		<div id="content">
+			<script type="module" src="./cod-ser-handler.js"></script>
+			<script type="module" src="./cod-ser.js"></script>
+			<script type="module">
+				let url = "http://localhost:8000/test2.html";
+				let contentElement = document.getElementById("content");
+				let contentText = await (await fetch(url)).text();
+				contentElement.innerHTML = contentText;
+
+				let annUrl = "http://localhost:8000/announcements.html";
+				let annSer = document.querySelector("#announcements");
+				annSer.innerHTML = await (await fetch(annUrl)).text();
+
+				let mathUrl = "http://localhost:8000/math.html";
+				let mathSer = document.querySelector("#math > .series");
+				mathSer.innerHTML = await (await fetch(mathUrl)).text();
+
+				let physUrl = "http://localhost:8000/phys.html";
+				let physSer = document.querySelector("#phys > .series");
+				physSer.innerHTML = await (await fetch(physUrl)).text();
+
+				let progUrl = "http://localhost:8000/prog.html";
+				let progSer = document.querySelector("#prog > .series");
+				progSer.innerHTML = await (await fetch(progUrl)).text();
+			</script>
+		</div>
+	</body>
+</html>
